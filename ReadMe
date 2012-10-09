@@ -1,0 +1,19 @@
+本目录下的脚本实现了把数据库中和类CBBEmployee，CBBFinancialLog,CBBFurniture,CBBInventoryObj,CBBLocation,CBBPlayer,CBBPlayerToy,CBBStore,CBBWarehouse相关的数据从Mysql==>Redis的迁移，
+一下以对CBBPlayer类的迁移来说明如何实现数据的迁移：
+1)在命令行窗口cd到本目录
+2)在shell这输入一下命令
+python Player.py
+
+3)监视Redis的更改，并做相关处理的文件为RedisMonitor.py,目前对其中的当监视到Redis更改之后的处理部分为着处理，只是答应出了相应的语句。
+
+注意：
+1）运行脚本，需要的机器装有mysql命令行客户端，redis命令行客户端,redis 服务器
+目前版本是把数据存到了本地的redis服务器中，在迁移之前需要打开redis服务
+2) 程序没有完全测试，原因如下：（1）在测试数据库(ip以110结尾）中数据不全，无法完成测试，（2）某些SQL语句不正确，可能需要BOB协助，（3）可能需要对类的字段做补充
+
+完整测试过的类有Player.py
+作者：
+郭旭聪：Employee.py FinancialLog.py PlayerToy.py Store.py
+张金国：其他文件
+
+
